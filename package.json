@@ -1,0 +1,32 @@
+{
+  "name": "@things-factory/graphql-utils",
+  "version": "0.0.1-alpha.1",
+  "main": "dist/server/index.js",
+  "things-factory": true,
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "serve": "things-factory",
+    "serve:dev": "npm run build && things-factory-dev",
+    "start:app": "things-factory-app",
+    "build": "npm run clean && tsc",
+    "clean": "rm -rf dist",
+    "prepublish": "npm run build",
+    "migration": "npm run build && things-factory-migration",
+    "migration:create": "node ./node_modules/typeorm/cli.js migration:create",
+    "migration:generate": "node ./node_modules/typeorm/cli.js migration:generate",
+    "migration:run": "node ./node_modules/typeorm/cli.js migration:run",
+    "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
+  },
+  "peerDependencies": {
+    "type-graphql": "^1.0.0-rc.3"
+  },
+  "devDependencies": {
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.4",
+    "koa": "^2.13.0",
+    "type-graphql": "^1.0.0-rc.3",
+    "typeorm": "^0.2.25",
+    "typescript": "^3.9.6"
+  }
+}
