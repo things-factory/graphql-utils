@@ -7,9 +7,9 @@ export interface IPaginated {
 }
 
 export function PaginatedResponse<TItem>(TItemClass: ClassType<TItem>): any {
-  @ObjectType({ isAbstract: true })
-  // @ObjectType(`Paginated${TItemClass.name}Response`)
-  abstract class PaginatedResponseClass {
+  // @ObjectType({ isAbstract: true })
+  @ObjectType(`Paginated${TItemClass.name}Response`)
+  class PaginatedResponseClass {
     @Field((type) => [TItemClass])
     items: TItem[]
 
