@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/graphql-utils",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "main": "dist/server/index.js",
   "things-factory": true,
   "license": "MIT",
