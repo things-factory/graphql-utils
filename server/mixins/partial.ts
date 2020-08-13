@@ -5,7 +5,7 @@ export default function Partial<TClassType extends ClassType>(BaseClass: TClassT
 
   @ObjectType({ isAbstract: true })
   @InputType({ isAbstract: true })
-  class PartialClass extends BaseClass {}
+  abstract class PartialClass extends BaseClass {}
 
   // Copy relevant fields and create a nullable version on the new type
   const fields = metadata.fields.filter((f) => f.target === BaseClass || BaseClass.prototype instanceof f.target)

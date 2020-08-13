@@ -6,7 +6,7 @@ export const buildQuery = function (queryBuilder: any, params: ListParam, contex
   const filters = params.filters
   const pagination = params.pagination
   const sortings = params.sortings
-  const domainId = context && context.state.domain && context.state.domain.id
+  const domainId = context?.state?.domainEntity?.id
 
   if (filters && filters.length > 0) {
     filters.forEach(filter => {
@@ -24,7 +24,7 @@ export const buildQuery = function (queryBuilder: any, params: ListParam, contex
     })
   }
 
-  if (domainRef) {
+  if (domainRef && domainId) {
     queryBuilder.andWhere(`"${queryBuilder.alias}"."domain_id" = :domainId`, { domainId })
   }
 
