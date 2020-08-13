@@ -10,10 +10,10 @@ export function PaginatedResponse<TItem>(TItemClass: ClassType<TItem>): any {
   // @ObjectType({ isAbstract: true })
   @ObjectType(`Paginated${TItemClass.name}Response`)
   class PaginatedResponseClass {
-    @Field((type) => [TItemClass])
+    @Field(type => [TItemClass])
     items: TItem[]
 
-    @Field((type) => Int)
+    @Field(type => Int)
     total: number
 
     @Field({ nullable: true })

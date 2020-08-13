@@ -8,12 +8,12 @@ export default function Partial<TClassType extends ClassType>(BaseClass: TClassT
   abstract class PartialClass extends BaseClass {}
 
   // Copy relevant fields and create a nullable version on the new type
-  const fields = metadata.fields.filter((f) => f.target === BaseClass || BaseClass.prototype instanceof f.target)
-  fields.forEach((field) => {
+  const fields = metadata.fields.filter(f => f.target === BaseClass || BaseClass.prototype instanceof f.target)
+  fields.forEach(field => {
     const newField = {
       ...field,
       typeOptions: { ...field.typeOptions, nullable: true },
-      target: PartialClass,
+      target: PartialClass
     }
     metadata.fields.push(newField)
   })
